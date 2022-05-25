@@ -2,7 +2,6 @@
 
 ## Stack, Heap & các kiểu khởi tạo String
 
-``rust
 fn main() {
     // Khai báo như này sẽ không phải kiểu dữ liệu String
     // Nó chỉ là dãy các ký tự character nối tiếp nhau, và được lưu trong Stack
@@ -27,4 +26,3 @@ fn main() {
 fn love_flower(flower: String, count: i32){
     println!("Love from {} {}", count, flower);
 }
-``
