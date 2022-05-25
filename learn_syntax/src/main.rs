@@ -5,7 +5,7 @@ fn main() {
     println!("{} is String?", test1);
 
     // Nên báo lỗi ở hàm love_flower
-    love_flower(test1, 2);
+    // love_flower(test1, 2);
 
     let test2 = "LTMH".to_string();
     println!("{} is String?", test1);
@@ -17,6 +17,11 @@ fn main() {
     let mut str = String::new();
     str.push_str("abc");
     println!("String is {}", str);
+
+    let var1 = String::from("Hello");
+    let var2 = var1.clone();
+    println!("Get value of var1: {}", var1);
+
 }
 
 fn love_flower(flower: String, count: i32){
