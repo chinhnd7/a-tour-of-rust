@@ -1,29 +1,13 @@
 fn main() {
-    // Khai báo như này sẽ không phải kiểu dữ liệu String
-    // Nó chỉ là dãy các ký tự character nối tiếp nhau, và được lưu trong Stack
-    let test1 = "LTMH";
-    println!("{} is String?", test1);
+    let mut s1 = String::from("Hello");
+    let len = calculate_lengjht(&mut s1);
 
-    // Nên báo lỗi ở hàm love_flower
-    // love_flower(test1, 2);
-
-    let test2 = "LTMH".to_string();
-    println!("{} is String?", test1);
-
-    // Như này thì được
-    love_flower(test2, 2);
-
-    // Hoặc khai báo String theo cách này, lưu tại Heap
-    let mut str = String::new();
-    str.push_str("abc");
-    println!("String is {}", str);
-
-    let var1 = String::from("Hello");
-    let var2 = var1.clone();
-    println!("Get value of var1: {}", var1);
-
+    println!("Do dai cua {} la {}", s1, len);
 }
 
-fn love_flower(flower: String, count: i32){
-    println!("Love from {} {}", count, flower);
+fn calculate_lengjht(some_string: &mut String) -> usize {
+    some_string.push_str(" world!");
+    let length = some_string.len();
+    length
 }
+
