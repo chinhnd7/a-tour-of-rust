@@ -34,14 +34,14 @@ fn love_flower(flower: String, count: i32){
 ### Ownership rules áp dụng cho các kiểu dữ liệu lưu trong Heap, còn Stack thì không
 
 ***Vì mới học nên trước mắt chúng ta sẽ lấy ví dụ với data structure phổ biến: String***
-    ** 1. Mỗi 1 giá trị chỉ có 1 biến được gọi là chủ sở hữu (one value one variable (owner))
+    *1. Mỗi 1 giá trị chỉ có 1 biến được gọi là chủ sở hữu (one value one variable (owner))*
         Each value in Rust has a variable that’s called its owner.
 
-    2. Chỉ có 1 owner tại 1 thời điểm (1 biến không thể có 2 owner tại 1 thời điểm)
+    *2. Chỉ có 1 owner tại 1 thời điểm (1 biến không thể có 2 owner tại 1 thời điểm)*
         There can only be one owner at a time.
 
-    3. Khi owner đi ra khỏi phạm vi hoạt động, value sẽ bị drop.
-        When the owner goes out of scope, the value will be dropped.**
+    *3. Khi owner đi ra khỏi phạm vi hoạt động, value sẽ bị drop.*
+        When the owner goes out of scope, the value will be dropped.
 
 ```rust
     let var1 = String::from("Hello");
@@ -49,7 +49,7 @@ fn love_flower(flower: String, count: i32){
     println!("Get value of var1: ", var1);
 ```
 
-    Báo lỗi *** borrow of moved value: `var1`***
+    Báo lỗi borrow of moved value: `var1`
 
     Lúc này var2 đã là owner của giá trị "hello". var1 đã bị drop.
     
@@ -99,8 +99,7 @@ fn calculate_lenght(jun: String) -> (String, usize){
 
     Vậy là việc này rất mất thời gian, và rườm rà đúng không?
     Có cách nào khác không?
-
-    **Truyền tham chiếu, như sau:**
+**Truyền tham chiếu, như sau:**
 ```rust
 fn main() {
     let s1 = String::from("Hello");
@@ -114,7 +113,7 @@ fn calculate_lengjht(some_string: &String) -> usize {
     length
 }
 ```
-    **Vậy muốn thay đổi luôn giá trị của s1 thì sao?**
+**Vậy muốn thay đổi luôn giá trị của s1 thì sao?**
 ```rust
 fn main() {
     // thêm mut
