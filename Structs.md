@@ -4,7 +4,6 @@
 
 ```rust
 #[derive(Debug)]
-
 struct Member {
     username: String,
     email: String,
@@ -53,7 +52,6 @@ fn create_new_member(username: String, email: String, age: u64) -> Member {
 **Đây là cách các giang hồ thật sự dùng Struct**
 ```rust
 #[derive(Debug)]
-
 struct Rectangle {
     length: i32,
     width: i32,
