@@ -1,21 +1,39 @@
-enum IpAddrKind {
-    V4,
-    V6,
+enum Coin {
+    Bitcoin,
+    Ethereum,
+    Near,
+    Solana,
 }
 
-struct IpAddr {
-    kind: IpAddrKind,
-    address: String,
+fn get_money_in_wallet(coin: Coin) -> i32 {
+    match coin {
+        Coin::Bitcoin => {
+            let btc: i32 = 10;
+            println!("Bitcoin");
+            btc
+        }
+
+        Coin::Ethereum => {
+            let eth: i32 = 2;
+            println!("Ethereum");
+            eth
+        }
+
+        Coin::Near => {
+            let near: i32 = 3;
+            println!("Near");
+            near
+        }
+
+        Coin::Solana => {
+            let sol: i32 = 4;
+            println!("Solana");
+            sol
+        }
+    }
 }
 
 fn main() {
-    let home = IpAddr {
-        kind: IpAddrKind::V4,
-        address: String::from("127.0.0.1"),
-    };
-
-    let loopback = IpAddr {
-        kind: IpAddrKind::V6,
-        address: String::from("::1"),
-    };
+    let amount = get_money_in_wallet(Coin::Near);
+    println!("Amount: {}", amount);
 }

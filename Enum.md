@@ -24,7 +24,7 @@ fn main() {
     };
 }
 ```
-**Bạn nghĩ code trên tối ưu rồi? Hơi non đấy!**
+***Bạn nghĩ code trên tối ưu rồi? Hơi non đấy!***
 
 ## Enum with Data Types
 **Đính kèm dữ liệu vào từng biến thể của Enum, vì vậy nên không cần Struct**
