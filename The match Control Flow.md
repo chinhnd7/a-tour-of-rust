@@ -45,3 +45,34 @@ fn main() {
     println!("Amount: {}", amount);
 }
 ```
+
+**Nếu từ mỗi ví Bitcoin ta muốn chỉ ra chủ sở hữu thuộc loại Cá nào, ta cần thêm 1 value lưu bên trong biến thể Enum Bitcoin này**
+```rust
+enum Balance {
+    Small,
+    Intermedium,
+    Fish,
+    Shark,
+}
+
+enum Coin {
+    // same
+}
+
+fn get_money_in_wallet(coin: Coin) -> i32 {
+    match coin {
+        Coin::Bitcoin(balance) => {
+            let btc: i32 = 10;
+            println!("Bitcoin");
+            println!("I am a {:#?}", balance);
+            btc
+        }
+        // same
+    }
+}
+
+fn main() {
+    let amount = get_money_in_wallet(Coin::Bitcoin(Balance::Shark)); // I am a Shark
+    println!("Amount: {}", amount);
+}
+```
