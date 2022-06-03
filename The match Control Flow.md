@@ -56,6 +56,7 @@ enum Balance {
 }
 
 enum Coin {
+    Bitcoin(Balance),
     // same
 }
 
@@ -159,4 +160,37 @@ fn main() {
         _ => (), // here
     }
 }
+```
+
+## If let
+
+**Với match khi ta không quan tâm đến value so sánh, và cũng không xử lý gì, như này này `_ => (),`. Vậy thì ta nên sử dụng cách viết với `if let`**
+Here we go:
+
+```rust
+let value = Some(117);
+if let Some(bth_day) = value {
+    println!("Jun's birthday is {}", bth_day);
+}
+```
+
+**if let and else**
+
+Well, khi mà sử dụng `match`, tại mỗi block đối sánh mà logic của nó quá dài dòng, ta hoàn toàn có thể cân nhắc để sử dụng `if let and else`
+
+```rust
+    let mut count = 0;
+    if let Coin::Quarter(state) = coin {
+        println!("State quarter from {:?}!", state);
+    } else {
+        count += 1;
+    }
+```
+
+```rust
+    let mut count = 0;
+    match coin {
+        Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+        _ => count += 1,
+    }
 ```
