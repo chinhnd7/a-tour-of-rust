@@ -1,14 +1,12 @@
 fn main() {
-    let five = Some(5);
-    let six = plus_one(five);
-    let none = plus_one(None);
-    println!("Six: {:#?}", six);
-    println!("None: {:#?}", none);
+    let value = Some(8);
+    match value {
+        Some(5) => println!("Hey 5"),
+        Some(7) => println!("Hey 7"),
+        _ => call_other(),
+    }
 }
 
-fn plus_one(x: Option<i32>) -> Option<i32> {
-    match x {
-        Some(x) => Some(x + 1),
-        None => None,
-    }
+fn call_other() {
+    println!("No love for other");
 }

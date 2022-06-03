@@ -108,3 +108,55 @@ Six: Some(
 )
 None: None
 ```
+
+## Catch-all Patterns and the _ Placeholder
+
+Bắt hết các case còn lại: `other` 
+
+```rust
+fn main() {
+    let value = Some(8);
+    match value {
+        Some(5) => println!("Hey 5"),
+        Some(7) => println!("Hey 7"),
+        other => call_other(other),
+    }
+}
+
+fn call_other(some_num: Option<u8>) {
+    println!("No love for other {:#?}", some_num);
+}
+```
+
+***Sử dụng `other` khi chúng tan cần chính giá trị này để thực hiện các hành động tiếp theo.***
+
+### Nếu không quan tâm đến các giá trị còn lại `_`
+
+Dùng _ Placeholder
+```rust
+fn main() {
+    let value = Some(8);
+    match value {
+        Some(5) => println!("Hey 5"),
+        Some(7) => println!("Hey 7"),
+        _ => call_other(),
+    }
+}
+
+fn call_other() {
+    println!("No love for other");
+}
+```
+
+### Nếu không quan tâm đến các giá trị còn lại + không thực hiện hành động gì
+
+```rust
+fn main() {
+    let value = Some(8);
+    match value {
+        Some(5) => println!("Hey 5"),
+        Some(7) => println!("Hey 7"),
+        _ => (), // here
+    }
+}
+```
