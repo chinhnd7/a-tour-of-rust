@@ -76,3 +76,35 @@ fn main() {
     println!("Amount: {}", amount);
 }
 ```
+
+## Matching with Option<T>
+
+**Việc xử lý matching với Option<T>, yah u know, điều này là cần thiết khi xử lý các value null**
+```rust
+fn main() {
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+    println!("Six: {:#?}", six);
+    println!("None: {:#?}", none);
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        Some(x) => Some(x + 1),
+        // None => None,
+    }
+}
+```
+
+Nếu không match trường hợp None, chúng ta sẽ gặp lỗi ở đây:
+`error[E0004]: non-exhaustive patterns: `None` not covered`
+
+Kết quả sau khi bỏ comment và cover None case, and run:
+
+```rust
+Six: Some(
+    6,
+)
+None: None
+```
