@@ -1,3 +1,20 @@
+# Error Handling
+
+## Using a panic! Backtrace
+
+```rust
+fn main() {
+    panic!("crash and burn");
+}
+```
+
+***panic! chỉ in lỗi ra chứ không xử lý gì***
+
+## Result
+
+***Phần này thì chỉ code thôi nhé***
+
+```rust
 // enum Result<T, E> {
 //     Ok(T),
 //     Err(E),
@@ -52,3 +69,4 @@ fn main() {
         println!("access");
     }
 }
+```
