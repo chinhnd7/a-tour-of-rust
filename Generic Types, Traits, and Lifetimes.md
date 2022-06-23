@@ -115,3 +115,107 @@ enum Result<T, E> {
     Err(E),
 }
 ```
+
+## Trait in Rust
+
+Trait trong Rust khá giống với interface của Java. Việc định nghĩa ra `functions` để `structs` có thể impl. Trong Rust thì có thể định nghĩa các function này 1 cách trừu tượng, struct impl có thể tự định nghĩa, hoặc có thể định nghĩa function mặc định của trait, struct impl có thể tùy chọn, ***dùng hoặc tự định nghĩa lại***
+
+```rust
+struct Data {
+    num1: i32,
+    num2: i32,
+    str1: String,
+    optional: Option<i32>,
+}
+
+struct Data2 {
+    num1: i32,
+    num2: i32,
+    str1: String,
+    optional: Option<i32>,
+}
+
+impl Data {
+    fn new() -> Self {
+        Data { 
+            num1: 15, 
+            num2: 25, 
+            str1: "Some string 2".to_string(), 
+            optional: None,
+        }
+    }
+}
+
+trait Transform {
+    // Nếu khai báo trừu tượng như này, 
+    // thì khi impl cho struct phải định nghĩa lại function này, nếu không sẽ báo lỗi
+    fn revert(&self) -> String;
+}
+
+trait Transform2 {
+    // Nếu khai báo function đầy đủ, lúc này function này sẽ là function mặc định của trait này
+    // Thì khi impl cho struct không nhất thiết phải định nghĩa function này nữa
+    // Còn nếu trong block impl có viết lại function thì sẽ ưu tiên logic đã viết lại
+    fn revert(&self) -> String {
+        String::from("No string")
+    }
+}
+
+impl Transform for Data {
+    fn revert(&self) -> String {
+        self.str1.chars().rev().collect::<String>()
+    }
+}
+
+impl Transform2 for Data2 {
+    // fn revert(&self) -> String {
+    //     (self.num1 + self.num2).to_string()
+    // }
+}
+
+
+fn main() {
+    let a = Data::new();
+
+    let b = Data2 {
+        num1: 10,
+        num2: 20,
+        str1: String::from("ok string"),
+        optional: None,
+    };
+
+    println!("{}", a.revert());
+    println!("{}", b.revert());
+}
+```
+
+## Life Time
+
+```rust
+fn main() {
+    let p2 = "string2".to_string();
+    let p3 = "string3".to_string();
+
+    let a = test1(7, &p2, &p3, 45);
+    println!("result: {}", a);
+}
+
+fn test1<'a>(param1: i32, param2: &'a str, param3: &'a str, param4: i32) -> &'a str {
+    if param1 == 7 && param4 > 10 {
+        param2
+    } else {
+        param3
+    }
+}
+```
+
+```rust
+    {
+        let x = 5;            // ----------+-- 'b
+                              //           |
+        let r = &x;           // --+-- 'a  |
+                              //   |       |
+        println!("r: {}", r); //   |       |
+                              // --+       |
+    }                         // ----------+
+```

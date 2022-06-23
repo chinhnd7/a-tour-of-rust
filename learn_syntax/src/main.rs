@@ -1,31 +1,15 @@
-struct Point<T, U> {
-    x: T,
-    y: U,
-}
-
-impl<T, U> Point<T, U> {
-    fn mix<V, W>(self, other: Point<V, W>) -> Point<T, W>{
-        Point {
-            x: self.x,
-            y: other.y,
-        }
-    }
-}
-
 fn main() {
-    let p1 = Point {x: 5, y : 10};
-    let p2 = Point {x: 3, y: 'c'};
-    let p3 = p1.mix(p2);
+    let p2 = "string2".to_string();
+    let p3 = "string3".to_string();
 
-    print!("{} {}", p3.x, p3.y);
+    let a = test1(7, &p2, &p3, 45);
+    println!("result: {}", a);
 }
 
-enum Option<T> {
-    Some(T),
-    None,
-}
-
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
+fn test1<'a>(param1: i32, param2: &'a str, param3: &'a str, param4: i32) -> &'a str {
+    if param1 == 7 && param4 > 10 {
+        param2
+    } else {
+        param3
+    }
 }
