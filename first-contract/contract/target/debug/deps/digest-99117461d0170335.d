@@ -1,0 +1,11 @@
+c:\Rust-Lang\a-tour-of-rust\first-contract\contract\target\debug\deps\digest-99117461d0170335.rmeta: C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\lib.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\digest.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\dyn_digest.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\errors.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\fixed.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\variable.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\xof.rs
+
+c:\Rust-Lang\a-tour-of-rust\first-contract\contract\target\debug\deps\digest-99117461d0170335.d: C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\lib.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\digest.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\dyn_digest.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\errors.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\fixed.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\variable.rs C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\xof.rs
+
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\lib.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\digest.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\dyn_digest.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\errors.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\fixed.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\variable.rs:
+C:\Users\Jun\ Nguyen\.cargo\registry\src\github.com-1ecc6299db9ec823\digest-0.9.0\src\xof.rs:
