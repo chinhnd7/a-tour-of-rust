@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=C:\Rust-Lang\a-tour-of-rust\basicblog\contract\target\debug\build\typenum-89db6fab86de14bb\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=C:\Rust-Lang\a-tour-of-rust\basicblog\contract\target\debug\build\typenum-89db6fab86de14bb\out\op.rs
