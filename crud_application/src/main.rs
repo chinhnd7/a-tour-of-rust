@@ -1,5 +1,6 @@
 use std::io;
 
+#[derive(Debug, Clone)]
 pub struct Student {
     name: String,
     age: i32,
@@ -27,13 +28,14 @@ impl Students {
 
 mod manager {
     use crate::*;
-    fn add_student(Students: students) {
+    pub fn add_student(students: &mut Students) {
+        println!("Enter name of Student");
         let name = match get_input() {
             Some(input) => input,
             None => return,
         };
 
-        let age = match get_input(){
+        let age = match get_int(){
             Some(number) => number,
             None => return,
         };
@@ -43,6 +45,12 @@ mod manager {
         };
 
         students.add(student)
+    }
+
+    pub fn view(students: &Students) {
+        for student in students.view_all() {
+            println!("{:?}", student);
+        }
     }
 }
 
@@ -60,13 +68,14 @@ fn get_input() -> Option<String> {
 }
 
 fn get_int() -> Option<i32> {
+    println!("Enter Age of Student");
     let input = match get_input() {
         Some(input) => input,
         None => return None,
     };
 
     let parsed_input: Result<i32, _> = input.parse();
-    match parsed_input.is_ok() {
+    match parsed_input {
         Ok(input) => Some(input),
         Err(_) => None,
     }
@@ -107,13 +116,15 @@ impl Manager {
 
 fn main() {
 
+    let mut students = Students::new();
+
     loop {
         Manager::show();
         let input = get_input().expect("Please enter your data");
 
         match Manager::choice(&input.as_str()) {
-            Some(Manager::AddStudent) => (),
-            Some(Manager::ViewStudent) => (),
+            Some(Manager::AddStudent) => manager::add_student(&mut students),
+            Some(Manager::ViewStudent) => manager::view(&students),
             Some(Manager::EditStudent) => (),
             Some(Manager::DeleteStudent) => (),
             None => return,
